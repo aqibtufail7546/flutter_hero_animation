@@ -106,14 +106,9 @@ class _DetailScreenState extends State<DetailScreen>
           Positioned.fill(
             child: Hero(
               tag: widget.person.id,
-              child: Transform.scale(
-                scale: 2.0,
-                alignment: Alignment.centerLeft,
-                child: Image.asset(
-                  widget.person.imageUrl,
-                  fit: BoxFit.cover,
-                  alignment: Alignment.centerLeft,
-                ),
+              child: Image.asset(
+                widget.person.croppedImageUrl,
+                fit: BoxFit.cover,
               ),
             ),
           ),

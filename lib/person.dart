@@ -1,10 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Person {
   final String id;
   final String name;
   final String imageUrl;
+  final String croppedImageUrl;
   final String profession;
   final String birthInfo;
 
@@ -12,6 +12,7 @@ class Person {
     required this.id,
     required this.name,
     required this.imageUrl,
+    required this.croppedImageUrl,
     required this.profession,
     required this.birthInfo,
   });
@@ -20,6 +21,7 @@ class Person {
     String? id,
     String? name,
     String? imageUrl,
+    String? croppedImageUrl,
     String? profession,
     String? birthInfo,
   }) {
@@ -27,6 +29,7 @@ class Person {
       id: id ?? this.id,
       name: name ?? this.name,
       imageUrl: imageUrl ?? this.imageUrl,
+      croppedImageUrl: croppedImageUrl ?? this.croppedImageUrl,
       profession: profession ?? this.profession,
       birthInfo: birthInfo ?? this.birthInfo,
     );
@@ -37,6 +40,7 @@ class Person {
       'id': id,
       'name': name,
       'imageUrl': imageUrl,
+      'croppedImageUrl': croppedImageUrl,
       'profession': profession,
       'birthInfo': birthInfo,
     };
@@ -47,6 +51,7 @@ class Person {
       id: map['id'] as String,
       name: map['name'] as String,
       imageUrl: map['imageUrl'] as String,
+      croppedImageUrl: map['croppedImageUrl'] as String,
       profession: map['profession'] as String,
       birthInfo: map['birthInfo'] as String,
     );
@@ -59,7 +64,7 @@ class Person {
 
   @override
   String toString() {
-    return 'Person(id: $id, name: $name, imageUrl: $imageUrl, profession: $profession, birthInfo: $birthInfo)';
+    return 'Person(id: $id, name: $name, imageUrl: $imageUrl, croppedImageUrl: $croppedImageUrl, profession: $profession, birthInfo: $birthInfo)';
   }
 
   @override
@@ -69,6 +74,7 @@ class Person {
     return other.id == id &&
         other.name == name &&
         other.imageUrl == imageUrl &&
+        other.croppedImageUrl == croppedImageUrl &&
         other.profession == profession &&
         other.birthInfo == birthInfo;
   }
@@ -78,6 +84,7 @@ class Person {
     return id.hashCode ^
         name.hashCode ^
         imageUrl.hashCode ^
+        croppedImageUrl.hashCode ^
         profession.hashCode ^
         birthInfo.hashCode;
   }
